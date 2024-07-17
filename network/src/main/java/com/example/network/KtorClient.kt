@@ -41,7 +41,7 @@ class KtorClient {
 
 /**
  * Makes a safe api call and returns an encapsulated result
- * @param block the function to be called
+ * @param apiCall the function to be called
  * @return ApiOperation<T> an instance of a class that implements the ApiOperation interface
  */
 private inline fun <T> safeApiCall(apiCall: () -> T): ApiOperation<T> {

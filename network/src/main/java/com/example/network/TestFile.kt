@@ -8,21 +8,24 @@ import com.example.network.character.models.domain.Character
 
 @Composable
 fun TestFile(character: Character, modifier: Modifier = Modifier) {
+    val characterStatus = character.status
+    val characterGender = character.gender
+
     Column(modifier = modifier) {
         Text(
             text = "Hello ${character.name}!",
             modifier = modifier
         )
         Text(
-            text = "Gender: ${character.gender}!",
+            text = "Gender: ${characterGender.gender}",
             modifier = modifier
         )
         Text(
-            text = "Status: ${character.status}!",
+            text = "Status: ${characterStatus.status}",
             modifier = modifier
         )
         Text(
-            text = "Species: ${character.species}!",
+            text = "Species: ${character.species}",
             modifier = modifier
         )
     }

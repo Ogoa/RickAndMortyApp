@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -30,7 +31,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             RickAndMortyAppTheme {
-
+                Greeting()
             }
         }
     }
@@ -58,7 +59,9 @@ fun Greeting(
                     modifier = Modifier.padding(innerPadding)
                 )
             }
-            is CharacterUiState.Error -> { /*TODO*/ }
+            is CharacterUiState.Error -> {
+                Text(text = state.message)
+            }
         }
     }
 }
